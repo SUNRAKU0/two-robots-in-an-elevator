@@ -7,4 +7,6 @@ const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 const line = 'So... do you also pretend to recalculate your route every time the doors open on the wrong floor?';
 
 mkdirSync(outDir, { recursive: true });
-writeFileSync(join(outDir, 'entry.txt'), line + '\n', 'utf8');
+// The lift is small, so the chat file gets a proper label before it is filed away.
+const entryPath = join(outDir, 'entry.txt');
+writeFileSync(entryPath, line + '\n', 'utf8');
